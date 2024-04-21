@@ -44,7 +44,6 @@ namespace G18EShop
             }
         }
 
-
         private bool IsUserExisted(String email)
         {
             SqlDataReader reader = dbm.GetReader("select * from [Users] where useremail='" + email + "'");

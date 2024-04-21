@@ -93,6 +93,21 @@
                 background-color: #facb3c;
                 color:black;
             }
+        .danhmuc button {
+                color: black;
+                text-decoration: none;
+                text-align: center;
+                align-items: center;
+                padding: 14px;
+                font-size: 15px;
+                font-family:Roboto;
+               border: none;
+                background-color:#fde7a4;
+            }
+        .danhmuc button:hover {
+                background-color: #facb3c;
+                color:black;
+            }
          .right{
              flex:80%;
          }
@@ -136,6 +151,22 @@
             font-size:13px;
         }
         .addproduct input:hover{
+            background:#f9c001;
+            color:black;
+        }
+        .addproduct .addToCardButton{
+            width:60%;
+            padding:10px;
+            align-items:center;
+            text-align:center;
+            border:none;
+            border-radius:10px;
+            background:black;
+            color:white;
+            font-family:Roboto;
+            font-size:13px;
+        }
+        .addproduct .addToCardButton:hover{
             background:#f9c001;
             color:black;
         }
@@ -230,69 +261,34 @@
     <div id="main">
         <div class="left">
             <h3>Danh mục sản phẩm</h3>
-            <div class="danhmuc">
-                <a href="1">Bàn ghế</a>
-                <a href="2">Sofa</a>
-                <a href="3">Tủ kệ</a>
-                <a href="4">Đèn</a>
-            </div>
+            <form action="sanpham.aspx">
+                <div class="danhmuc">
+                    <% foreach (var item in categories)
+                       { %>
+                        <button name="id" value="<%= item.Id %>" type="submit"><%= item.Name %></button>
+                    <% } %>
+                </div>
+            </form>
 
         </div>
         <div class="right">
-            <div class="sp">
-                <% foreach (var item in listProducts)
-                   { %>
-                    <div class="boxsp">
-                        <img class="img-product" src="<%= item.img %>" width="100%"/>
-                        <p class="tensp">
-                            <b><%= item.Name %></b>
-                        </p>
-                        <h4 class="price"><%= item.LastPrice %></h4>
-                        <div class="addproduct">
-                            <a href="giohang.aspx">
-                                <input type="button" value="Thêm vào giỏ hàng"/>
-                            </a>
+            <form action="sanpham.aspx" method="post">
+                <div class="sp">
+                    <% foreach (var item in listProducts)
+                       { %>
+                        <div class="boxsp">
+                            <img class="img-product" src="<%= item.Img %>" width="100%"/>
+                            <p class="tensp">
+                                <b><%= item.Name %></b>
+                            </p>
+                            <h4 class="price"><%= item.LastPrice %></h4>
+                            <div class="addproduct">
+                                <button class="addToCardButton" type="submit" value="<%= item.ProductId %>" name="btnAddToCard">Thêm vào giỏ hàng</button>
+                            </div>
                         </div>
-                    </div>
-                <% } %>
-            </div>
-            <div class="sp">
-                <% foreach (var item in listBestseller)
-                   { %>
-                    <div class="boxsp">
-                        <img class="img-product" src="<%= item.img %>" width="100%"/>
-                        <p class="tensp">
-                            <b><%= item.Name %></b>
-                        </p>
-                        <h4 class="price"><%= item.LastPrice %></h4>
-                        <div class="addproduct">
-                            <a href="giohang.aspx">
-                                <input type="button" value="Thêm vào giỏ hàng"/>
-                            </a>
-                        </div>
-                    </div>
-                <% } %>
-
-            </div>
-
-            <div class="sp">
-                <% foreach (var item in listSanpham)
-                   { %>
-                    <div class="boxsp">
-                        <img class="img-product" src="<%= item.img %>" width="100%"/>
-                        <p class="tensp">
-                            <b><%= item.Name %></b>
-                        </p>
-                        <h4 class="price"><%= item.LastPrice %></h4>
-                        <div class="addproduct">
-                            <a href="giohang.aspx">
-                                <input type="submit" value="Thêm vào giỏ hàng"/>
-                            </a>
-                        </div>
-                    </div>
-                <% } %>
-
-            </div>
+                    <% } %>
+                </div>
+            </form>
         </div>
     </div>
     <div id="footer">
@@ -313,7 +309,7 @@
         <div class="col">
             <h3>Liên hệ</h3>
             <p>
-                Địa chỉ:193 Vĩnh Hưng, Hoàng Mai, Hà Nội</br> Hotline:0246.2909098</br>
+                Địa chỉ:193 Vĩnh Hưng, Hoàng Mai, Hà Nội<br> Hotline:0246.2909098<br>
                 Email: cskhG18Ecommerceshop.vn.com
             </p>
         </div>

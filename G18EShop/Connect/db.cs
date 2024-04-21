@@ -20,8 +20,6 @@ namespace G18EShop.Connect
             SqlConnection conn = new SqlConnection(connecttionString);
 
             conn.Open();
-
-
             return conn;
         }
 
@@ -44,6 +42,7 @@ namespace G18EShop.Connect
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Connection = this.GetConnection();
             cmd.ExecuteNonQuery();
+            closeConnection();
         }
 
         public void closeConnection()

@@ -111,6 +111,8 @@
     <Content Include="gioithieu.aspx" />
     <Content Include="index.aspx" />
     <Content Include="lienhe.aspx" />
+    <Content Include="OdersManager.aspx" />
+    <Content Include="ProductManager.aspx" />
     <Content Include="sanpham.aspx" />
     <Content Include="thanhtoan.aspx" />
     <Content Include="tintuc.aspx" />
@@ -168,7 +170,23 @@
     <Compile Include="lienhe.aspx.designer.cs">
       <DependentUpon>lienhe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="OdersManager.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>OdersManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OdersManager.aspx.designer.cs">
+      <DependentUpon>OdersManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ProductManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager.aspx.designer.cs">
+      <DependentUpon>ProductManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sanpham.aspx.cs">
       <DependentUpon>sanpham.aspx</DependentUpon>

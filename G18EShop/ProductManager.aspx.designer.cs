@@ -11,7 +11,7 @@ namespace G18EShop
 {
 
 
-    public partial class thanhtoan
+    public partial class ProductManager
     {
 
         /// <summary>
@@ -22,5 +22,14 @@ namespace G18EShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// MyFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile MyFileUpload;
     }
 }

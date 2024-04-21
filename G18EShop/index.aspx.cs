@@ -14,8 +14,8 @@ namespace G18EShop
     public partial class index : System.Web.UI.Page
 
     {
-        public List<ProductInfo> listProducts = new List<ProductInfo>();
-        public List<ProductInfo> listBestseller = new List<ProductInfo>();
+        public List<Product> listProducts = new List<Product>();
+        public List<Product> listBestseller = new List<Product>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,10 +64,11 @@ namespace G18EShop
                     }
                     catch (Exception exception)
                     {
-                        // Utils.DisplayAlert(ClientScript, this.GetType(), "Thêm vào giỏ hàng thành công",
-                        //     Page.Request.Url.ToString());
-                        Utils.DisplayAlert(ClientScript, this.GetType(), exception.Message,
+                        Utils.DisplayAlert(ClientScript, this.GetType(),
+                            "Sản phẩm này đã có sẵn trong giỏ hàng của bạn",
                             Page.Request.Url.ToString());
+                        // Utils.DisplayAlert(ClientScript, this.GetType(), exception.Message,
+                        //     Page.Request.Url.ToString());
                     }
                 }
                 else
@@ -89,12 +90,12 @@ namespace G18EShop
 
             SqlDataReader reader =
                 dbm.GetReader(
-                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice], [ProductImages].[Url] FROM [db_ECommerceShop].[dbo].[Products] where CategoryId = 1");
+                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [db_ECommerceShop].[dbo].[Products] where CategoryId = 1");
 
-            List<ProductInfo> temp = new List<ProductInfo>();
+            List<Product> temp = new List<Product>();
             while (reader.Read())
             {
-                ProductInfo productinfo = new ProductInfo();
+                Product productinfo = new Product();
                 productinfo.ProductId = reader.GetInt32(0);
                 productinfo.Name = reader.GetString(1);
                 productinfo.Description = reader.GetString(2);
@@ -126,31 +127,35 @@ namespace G18EShop
 
             SqlDataReader reader =
                 dbm.GetReader(
-                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice], [ProductImages].[Url] FROM [db_ECommerceShop].[dbo].[Products] INNER JOIN ProductImages ON Products.ProductId = ProductImages.ProductId where CategoryId = 2");
+                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [db_ECommerceShop].[dbo].[Products] where CategoryId = 2");
 
+            List<Product> temp = new List<Product>();
             while (reader.Read())
             {
-                ProductInfo productinfo = new ProductInfo();
+                Product productinfo = new Product();
                 productinfo.ProductId = reader.GetInt32(0);
                 productinfo.Name = reader.GetString(1);
                 productinfo.Description = reader.GetString(2);
                 productinfo.Price = reader.GetDecimal(3);
                 productinfo.LastPrice = reader.GetDecimal(4);
-                productinfo.Img = reader.GetString(5);
-                listBestseller.Add(productinfo);
+                temp.Add(productinfo);
             }
 
-            dbm.closeConnection();
-        }
+            reader.Close();
 
-        public class ProductInfo
-        {
-            public int ProductId;
-            public string Name;
-            public string Description;
-            public Decimal Price;
-            public Decimal LastPrice;
-            public string Img;
+            foreach (var product in temp)
+            {
+                reader = dbm.GetReader($"SELECT Top 1 [Url] FROM ProductImages WHERE ProductId = {product.ProductId}");
+                if (reader.Read() && !reader.IsDBNull(reader.GetOrdinal("Url")))
+                {
+                    product.Img = reader["Url"].ToString();
+                }
+
+                listProducts.Add(product);
+            }
+
+            reader.Close();
+            dbm.closeConnection();
         }
     }
 }

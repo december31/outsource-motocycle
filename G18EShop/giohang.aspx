@@ -238,7 +238,7 @@
     </div>
     <div class="cart">
         <h2>Giỏ hàng</h2>
-        <form action="">
+        <form action="giohang.aspx" method="post">
             <table>
                 <tr>
                     <th></th>
@@ -263,12 +263,9 @@
                             <input style="width:30px;outline:none;" type="number" value="1" min="1"/>
                         </td>
                         <td style="cursor:pointer;">
-                            <form action="giohang.aspx" method="POST">
-                                <button type="submit" value="<%= item.ProductId %>">
-                                    Xóa
-                                </button>
-                            </form>
-
+                            <button name="btnDelete" type="submit" value="<%= item.ProductId %>">
+                                Xóa
+                            </button>
                         </td>
                     </tr>
                 <% } %>

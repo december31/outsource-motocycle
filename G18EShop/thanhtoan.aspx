@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sanpham.aspx.cs" Inherits="G18EShop.sanpham" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="thanhtoan.aspx.cs" Inherits="G18EShop.thanhtoan" %>
 
 <!DOCTYPE html>
 
@@ -118,6 +118,24 @@
             background:#f9c001;
             color:black;
         }
+        .tongtien button{
+            width:150px;
+            height:40px;
+            padding:10px;
+            margin-bottom:10px;
+            align-items:center;
+            border:none;
+            border-radius:10px;
+            background:black;
+            color:white;
+            font-family:Roboto;
+            font-size:16px;
+            float:right;
+        }
+        .tongtien button:hover{
+            background:#f9c001;
+            color:black;
+        }
         #footer {
             margin: 50px auto;
             padding-left:0px;
@@ -167,7 +185,7 @@
     </style>
 </head>
 <body>
-<form id="form1" runat="server">
+<form id="form1" runat="server" method="post">
     <div id="header">
         <div class="logo">
             <img src="img/logo%20nội%20thất.jpg" height="90px"/>
@@ -221,7 +239,6 @@
                     <div class="chontt">
                         <input name="luachontt" type="radio"/>
                         <label for="">Thanh toán khi nhận hàng</label>
-
                     </div>
                 </div>
 
@@ -237,57 +254,41 @@
         <div class="right">
             <h2 style="text-align:center;">Thông tin sản phẩm</h2>
             <div class="cart">
-                <form action="">
+                <form action="thanhtoan.aspx" method="post">
                     <table>
                         <tr>
                             <th>Sản phẩm</th>
+                            <th></th>
                             <th>Giá</th>
                             <th>Số lượng</th>
                         </tr>
-                        <tr>
-                            <td style="display:flex;align-items:center;">
-                                <img src="img/bàn2.jpg" width=70px; Bàn tròn gỗ chân sắt;/>
-                            </td>
-                            <td>
-                                <h4>1.199.000đ</h4>
-                            </td>
-                            <td>
-                                <input style="width:30px;outline:none;" type="number" value="1" min="1"</td>
-                        </tr>
-                        <tr>
-                            <td style="display:flex;align-items:center;">
-                                <img src="img/bàn%20tròn.jpg" width=70px; Bàn tròn gỗ chân sắt/>
-                            </td>
-                            <td>
-                                <h4>999.000đ</h4>
-                            </td>
-                            <td>
-                                <input style="width:30px;outline:none;" type="number" value="1" min="1"</td>
-                        </tr>
-                        <tr>
-                            <td style="display:flex;align-items:center;">
-                                <img src="img/ban-lam-viec-gb-lv10-1.jpg" width=70px; Bàn tròn gỗ chân sắt/>
-                            </td>
-                            <td>
-                                <h4>1.199.000đ</h4>
-                            </td>
-                            <td>
-                                <input style="width:30px;outline:none;" type="number" value="1" min="1"</td>
-                        </tr>
+
+                        <% foreach (var item in listProducts)
+                           { %>
+                            <tr>
+                                <td style="display:flex;align-items:center;">
+                                    <img src="<%= item.Img %>" height=70px;/>
+                                </td>
+                                <td>
+                                    <%= item.Name %>
+                                </td>
+                                <td>
+                                    <h4><%= item.LastPrice %>đ</h4>
+                                </td>
+                                <td>
+                                    <input disabled style="width:30px;outline:none;" type="number" value="1" min="1"</td>
+                            </tr>
+                        <% } %>
                     </table>
                     <div class="tongtien">
-                        <p style="font-weight:bold;">Tổng tiền:<h>4.197.000đ</h></p>
-                        <input type="button" value="Đặt hàng"/>
+                        <p style="font-weight:bold;">Tổng tiền:<h><%= tongTien %>đ</h></p>
+                        <button name="btnDatHang" type="submit" value="true">Đặt hàng</button>
                         <a href="giohang.aspx">
                             <p style="align-items:center;padding-right:10px; color:black";>Quay lại giỏ hàng</p>
                         </a>
-
-
                     </div>
                 </form>
             </div>
-
-
         </div>
     </div>
     <div id="footer">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="G18EShop.Admin" %>
+﻿<%@ Page Language="C#" CodeBehind="ProductManager.aspx.cs" Inherits="G18EShop.ProductManager" %>
 
 <!DOCTYPE html>
 
@@ -17,6 +17,27 @@
         #main{
             display:flex;
             width:100%;
+        }
+        input{
+            width:300px;
+            height:40px;
+            margin-bottom:10px;
+            border:1px solid grey;
+            border-radius:10px;
+            padding-left:10px;
+        }
+        #newProduct button{
+            width:150px;
+            height:40px;
+            padding:10px;
+            margin-bottom:10px;
+            align-items:center;
+            border:none;
+            border-radius:10px;
+            background:black;
+            color:white;
+            font-family:Roboto;
+            font-size:16px;
         }
         .left{
             flex:20%;
@@ -110,6 +131,11 @@
         .box-icon{
             color:#f9c011;
         }
+        #newProduct {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: fit-content;
+        }
         .topsell{
             background-color:white;
             width:80%;
@@ -170,10 +196,10 @@
                     <a href="index.aspx">EligoMebel</a>
                 </div>
                 <div class="danhmuc">
-                    <%-- <a href="2">Khách hàng</a> --%>
-                    <a href="ProductManager.aspx">Sản phẩm</a>
-                    <a href="#">Đơn hàng</a>
-                    <%-- <a href="5">Tài khoản</a> --%>
+                    <a href="Admin.aspx">Admin</a>
+                    <a href="#">Sản phẩm</a>
+                    <a href="4">Đơn hàng</a>
+                    <a href="5">Tài khoản</a>
                 </div>
             </div>
         </div>
@@ -190,32 +216,19 @@
                 </div>
             </div>
             <div id="chung">
-                <div class="row1">
-                    <div class="box">
-                        <i class="fa fa-users box-icon"></i>
-                        <h1><%= UserCount %></h1>
-                        <p>Khách hàng</p>
-                    </div>
-                    <div class="box">
-                        <i class="fa fa-list box-icon"></i>
-                        <h1><%= ProductCount %></h1>
-                        <p>Sản phẩm</p>
-                    </div>
-                    <div class="box">
-                        <i class="fa fa-shopping-bag box-icon"></i>
-                        <h1><%= OrderCount %></h1>
-                        <p>Đơn hàng</p>
-                    </div>
-                    <div class="box">
-                        <i class="fa fa-google-wallet box-icon"></i>
-                        <h1><%= Revenue %></h1>
-                        <p>Doanh thu</p>
-                    </div>
-                </div>
+                <form id="newProduct" action="ProductManager.aspx" method="POST" enctype="multipart/form-data">
+                    <h3>Thêm sản phẩm</h3>
+                    <input name="Name" type="text" placeholder="Tên sản pẩm" required/></br>
+                    <input name="Description" type="text" placeholder="Description" required/></br>
+                    <input name="Price" type="number" placeholder="Price" required/></br>
+                    <input name="LastPrice" type="number" placeholder="LastPrice" required/></br>
+                    <input type="file" id="MyFileUpload" runat="server" accept="image/*" required/></br>
+                    <button type="submit">Thêm sản phẩm</button>
+                </form>
                 <div class="topsell">
                     <h2 style="text-align:center;">Danh sách sản phẩm</h2>
                     <div class="cart">
-                        <form action="">
+                        <form style="margin-left: auto; margin-right: auto; max-width: fit-content" method="post" action="ProductManager.aspx">
                             <table>
                                 <tr>
                                     <th></th>
@@ -223,6 +236,7 @@
                                     <th>Giá</th>
                                     <th>Giá cuối</th>
                                     <th>Đã bán</th>
+                                    <th></th>
                                 </tr>
                                 <% foreach (var item in listProducts)
                                    { %>
@@ -241,6 +255,11 @@
                                         </td>
                                         <td>
                                             <h4><%= item.Sold %></h4>
+                                        </td>
+                                        <td style="cursor:pointer;">
+                                            <button name="btnDelete" type="submit" value="<%= item.ProductId %>">
+                                                Xóa
+                                            </button>
                                         </td>
                                     </tr>
                                 <% } %>
