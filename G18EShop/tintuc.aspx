@@ -47,7 +47,7 @@
          }
          .menulist{
                 display: flex;
-                background-color:#f9c011;
+                background-color:#fa0000;
                 margin:0;
             }
         .menulist a {
@@ -73,7 +73,7 @@
 <form id="form1" runat="server">
     <div id="header">
         <div class="logo">
-            <img src="img/logo%20nội%20thất.jpg" height="90px"/>
+            <img src="Assets/Image/logo2.jpg" height="90px"/>
         </div>
         <div class="timkiem">
             <form action="" class="search" method="post">
@@ -81,13 +81,13 @@
             </form>
         </div>
         <a href="giohang.aspx" class="giohang">
-            <i class="fa fa-cart-plus" style="font-size:32px;"></i>
+            <img src="Assets/Image/cart.png" width="32"/>
         </a>
         <a href="dangnhap.aspx" class="login">
-            <input type="button" value="Login" style="background-color: #e9b708; color:white "/>
+            <input type="button" value="Login" style="background-color: #fa0000; color:white "/>
         </a>
         <a href="dangky.aspx" class="login">
-            <input type="button" value="Signup" style="background-color: #e9b708; color:white "/>
+            <input type="button" value="Signup" style="background-color: #fa0000; color:white "/>
         </a>
 
     </div>
@@ -98,7 +98,34 @@
         <a href="tintuc.aspx">Tin tức</a>
         <a href="lienhe.aspx">Liên hệ</a>
     </div>
-    <h2> Trang này sẽ sớm được cập nhật!</h2>
+    <h1>Xe máy - Phương tiện di chuyển phổ biến tại Việt Nam</h1>
+    <img src="Assets/Image/CB500F 2022.jpg" alt="Xe máy chất lượng">
+    <p>
+        Xe máy là phương tiện di chuyển phổ biến nhất tại Việt Nam với hơn 60 triệu xe đang lưu thông trên đường phố. Xe máy được ưa chuộng bởi tính linh hoạt, tiện lợi và giá cả phải chăng.
+        Tuy nhiên, xe máy cũng là phương tiện có tỷ lệ tai nạn cao nhất. Do đó, người tham gia giao thông cần tuân thủ luật lệ giao thông và sử dụng xe máy an toàn để bảo vệ bản thân và người khác.
+    </p>
+
+    <h2>Ưu điểm của xe máy</h2>
+    <ul>
+        <li>Linh hoạt: Xe máy có thể di chuyển trên nhiều địa hình khác nhau, kể cả những con đường nhỏ hẹp và gập ghềnh.</li>
+        <li>Tiện lợi: Xe máy dễ dàng điều khiển và sử dụng, phù hợp với mọi lứa tuổi.</li>
+        <li>Giá cả phải chăng: Xe máy có giá thành rẻ hơn so với ô tô, phù hợp với túi tiền của người dân Việt Nam.</li>
+    </ul>
+
+    <h2>Nhược điểm của xe máy</h2>
+    <ul>
+        <li>Tỷ lệ tai nạn cao: Xe máy là phương tiện có tỷ lệ tai nạn cao nhất do kích thước nhỏ và tính linh hoạt.</li>
+        <li>Ô nhiễm môi trường: Xe máy thải ra khí CO2 và các chất độc hại khác, góp phần gây ô nhiễm môi trường.</li>
+        <li>Tiếng ồn: Xe máy gây ra tiếng ồn lớn, ảnh hưởng đến môi trường sống của con người.</li>
+    </ul>
+
+    <h2>Sử dụng xe máy an toàn</h2>
+    <ul>
+        <li>Đội mũ bảo hiểm khi tham gia giao thông.</li>
+        <li>Tuân thủ luật lệ giao thông.</li>
+        <li>Lái xe với tốc độ an toàn.</li>
+        <li>Bảo dưỡng xe máy định kỳ.</li>
+    </ul>
 </form>
 </body>
 </html>

@@ -20,7 +20,7 @@
         }
         .left{
             flex:20%;
-            background:#f9c011;
+            background:#fa0000;
             height:820px;
             align-items:center;
             text-align:center;
@@ -50,7 +50,7 @@
             }
         .danhmuc a:hover {
                 background-color: white;
-                color:#f9c011;
+                color:#fa0000;
             }
         .right{
             flex:80%;
@@ -108,7 +108,7 @@
             padding-top:10px;
         }
         .box-icon{
-            color:#f9c011;
+            color:#fa0000;
         }
         .topsell{
             background-color:white;

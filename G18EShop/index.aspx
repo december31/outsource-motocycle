@@ -55,7 +55,7 @@
 
         .menulist {
             display: flex;
-            background-color: #f9c011;
+            background-color: #fa0000;
             margin: 0;
         }
 
@@ -109,7 +109,7 @@
             }
 
                 .boxsp p:hover {
-                    color: #f9c011;
+                    color: #fa0000;
                 }
 
         .addproduct input {
@@ -127,12 +127,12 @@
         }
 
         .addproduct input:hover {
-            background: #f9c001;
+            background: #fa0000;
             color: black;
         }
 
         .addproduct .addToCardButton:hover {
-            background: #f9c001;
+            background: #fa0000;
             color: black;
         }
 
@@ -184,11 +184,11 @@
             }
 
                 .col a:hover {
-                    color: #f9c001;
+                    color: #fa0000;
                 }
 
             .col h3 {
-                color: #f9c001;
+                color: #fa0000;
             }
 
         @media only screen and (max-width:700px) {
@@ -219,7 +219,7 @@
 <form id="form1" runat="server">
     <div id="header">
         <div class="logo">
-            <img src="img/logo%20nội%20thất.jpg" height="90px"/>
+            <img src="Assets/Image/logo2.jpg" height="90px"/>
         </div>
         <div class="timkiem">
             <form action="" class="search" method="post">
@@ -227,13 +227,13 @@
             </form>
         </div>
         <a href="giohang.aspx" class="giohang">
-            <i class="fa fa-cart-plus" style="font-size:32px;"></i>
+            <img src="Assets/Image/cart.png" width="32"/>
         </a>
         <a href="dangnhap.aspx" class="login">
-            <input type="button" value="Login" style="background-color: #e9b708; color:white "/>
+            <input type="button" value="Login" style="background-color: #fa0000; color:white "/>
         </a>
         <a href="dangky.aspx" class="login">
-            <input type="button" value="Signup" style="background-color: #e9b708; color:white "/>
+            <input type="button" value="Signup" style="background-color: #fa0000; color:white "/>
         </a>
 
     </div>
@@ -269,7 +269,7 @@
     <div id="sp">
         <% foreach (var item in listBestseller)
            { %>
-            <div class="boxsp">
+            <div class="boxsp" style="cursor: pointer" onclick="window.location='ProductDetail.aspx?id=<%= item.ProductId %>';">
                 <img class="img-product" src="<%= item.Img %>" width="100%"/>
                 <p class="tensp">
                     <b><%= item.Name %></b>

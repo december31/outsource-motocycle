@@ -48,7 +48,7 @@
 
          .menulist{
                 display: flex;
-                background-color:#f9c011;
+                background-color:#fa0000;
                 margin:0;
             }
         .menulist a {
@@ -99,10 +99,10 @@
             }
         .col a:hover {
 
-                color: #f9c001;
+                color: #fa0000;
             }
         .col h3{
-            color:#f9c001;
+            color:#fa0000;
         }
         #main p{
             font-family:Arial;
@@ -121,7 +121,7 @@
 <form id="form1" runat="server">
     <div id="header">
         <div class="logo">
-            <img src="img/logo%20nội%20thất.jpg" height="90px"/>
+            <img src="Assets/Image/logo2.jpg" height="90px"/>
         </div>
         <div class="timkiem">
             <form action="" class="search" method="post">
@@ -129,13 +129,13 @@
             </form>
         </div>
         <a href="giohang.aspx" class="giohang">
-            <i class="fa fa-cart-plus" style="font-size:32px;"></i>
+            <img src="Assets/Image/cart.png" width="32"/>
         </a>
         <a href="dangnhap.aspx" class="login">
-            <input type="button" value="Login" style="background-color: #e9b708; color:white onclick="toLogin ()"/>
+            <input type="button" value="Login" style="background-color: #fa0000; color:white onclick="toLogin ()"/>
         </a>
         <a href="dangky.aspx" class="login">
-            <input type="button" value="Signup" style="background-color: #e9b708; color:white "/>
+            <input type="button" value="Signup" style="background-color: #fa0000; color:white "/>
         </a>
 
     </div>
@@ -147,45 +147,59 @@
         <a href="lienhe.aspx">Liên hệ</a>
     </div>
     </div>
-    <div id="banner">
-        <img src="img/banner%20gt.jpg"width="80%"/>
-    </div>
     <div id="main">
-        <h2>Giá trị và sự khác biệt</h2>
-        <p>
-            Với mong muốn phát triển thương hiệu Việt bằng nội lực,
-            ELIGO đã chú trọng vào thiết kế và sản xuất nội thất trong nước.
-            Danh mục sản phẩm của ELIGO thường xuyên được đổi mới và cập nhật,
-            liên tục cung cấp cho khách hàng các dòng sản phẩm theo xu hướng mới nhất.
-            Do chính người Việt thiết kế và sản xuất, nội thất thương hiệu ELIGO luôn phù hợp
-            với cuộc sống Á Đông, đem đến sự tiện nghi hoàn hảo trong mọi không gian sống.</br>
-            Hơn 70% sản phẩm của ELIGO được thiết kế, sản xuất bởi đội ngũ nhân viên cùng công nhân ưu tú
-            với nhà máy có cơ sở vật chất hiện đại bậc nhất tại Việt Nam.</br>
-            Sự khác biệt của ELIGO chính là sáng tạo nội thất thành phong cách riêng,
-            phù hợp với nhu cầu khách hàng. Không chỉ là sản phẩm nội thất đơn thuần,
-            mà còn là không gian sống theo phong cách riêng với cách bày trí hài hòa từ đồ nội thất
-            kết hợp với đồ trang trí. Giúp khách hàng cảm nhận được một không gian sống thực sự,
-            cảm thấy thoải mái để tận hưởng cuộc sống.
-        </p>
-        <img src="img/anh%20gioi%20thieu.jpg" width="70%"/>
-        <h2>Chất lượng và dịch vụ</h2>
-        <p>
-            Chất lượng của nguyên vật liệu, phụ kiện và quy trình sản xuất đều được kiểm định
-            và giám sát chặt chẽ bởi hệ thống quản lý chất lượng ISO 9001.
-            Sản phẩm của ELIGO được thiết kế theo định hướng công năng sử dụng, thẩm mỹ và chất lượng.
-            Trong những năm gần đây, thương hiệu luôn hướng đến xu hướng thiết kế xanh nhằm đóng góp
-            không chỉ một không gian sống tiện nghi mà còn là một môi trường sống trong lành cho
-            người sử dụng và cộng đồng.
-            Với nhiều cống hiến như vậy, ELIGO vinh dự nhiều năm liền được trao tặng các danh hiệu
-            “Hàng Việt Nam chất lượng cao”, “Trusted brand” và “Top 100 nhà cung cấp hàng đầu”.</br>
+        <h2>Giá trị cốt lõi</h2>
+        <ul>
+            <li>Uy tín: Sản phẩm chính hãng, nguồn gốc rõ ràng</li>
+            <li>Chất lượng: Kiểm tra kỹ lưỡng trước khi bán</li>
+            <li>Giá cả cạnh tranh: Cập nhật giá thị trường, thường xuyên có KM</li>
+            <li>Dịch vụ chuyên nghiệp: Tư vấn nhiệt tình, bảo hành chính hãng</li>
+        </ul>
 
-            Bên cạnh đó, ELIGO tự hào sở hữu đội ngũ tư vấn thiết kế và kỹ sư chuyên nghiệp,
-            có kiến thức sâu rộng trong lĩnh vực đồ gỗ nội thất. Tập thể nhân viên tại ELIGO cam kết
-            nỗ lực tư vấn và trợ giúp khách hàng lựa chọn sản phẩm ưng ý nhất. Dịch vụ tư vấn thiết kế
-            của ELIGO sẽ giúp khách hàng kiến tạo một không gian sống như ý thông qua sự phối hợp điêu
-            luyện giữa các sản phẩm nội thất và đồ trang trí.
-        </p>
-        <img src="img/anh%20gt%202.jpg" width="70%";/>
+        <h2>Sự khác biệt của G18EShop</h2>
+        <ul>
+            <li>Hệ thống cửa hàng rộng khắp</li>
+            <li>Chính sách đổi trả linh hoạt (7 ngày)</li>
+            <li>Hình thức thanh toán đa dạng</li>
+            <li>Chương trình khuyến mãi hấp dẫn</li>
+        </ul>
+        <h2>Chất lượng vượt trội</h2>
+        <section class="quality">
+            <div class="quality-item">
+                <img src="Assets/Image/CB500F 2022.jpg" alt="Xe máy chất lượng">
+                <h3>Sản phẩm chính hãng</h3>
+                <p>G18EShop chỉ cung cấp sản phẩm xe máy chính hãng từ các thương hiệu uy tín trên thị trường như Honda, Yamaha, Suzuki, SYM,... Mỗi chiếc xe đều được kiểm tra kỹ lưỡng trước khi đến tay khách hàng để đảm bảo chất lượng và độ an toàn.</p>
+            </div>
+            <div class="quality-item">
+                <img src="Assets/Image/71bbd710bb05e2cf3fd1d81f9f316f60.jpg" height="450" alt="Động cơ mạnh mẽ">
+                <h3>Động cơ mạnh mẽ, tiết kiệm nhiên liệu</h3>
+                <p>Xe máy G18EShop được trang bị động cơ mạnh mẽ, vận hành êm ái và tiết kiệm nhiên liệu. Nhờ vậy, bạn có thể thoải mái di chuyển trên mọi địa hình mà không lo hao xăng.</p>
+            </div>
+            <div class="quality-item">
+                <img src="Assets/Image/1000_F_237081198_VSqVQxwGIDtv6OZVNejY1HlfuX6UJFZf.jpg" alt="Thiết kế thời trang">
+                <h3>Thiết kế thời trang, hiện đại</h3>
+                <p>Xe máy G18EShop có thiết kế thời trang, hiện đại, phù hợp với mọi lứa tuổi và phong cách. Bạn sẽ luôn tự tin khi di chuyển trên đường phố với chiếc xe G18EShop của mình.</p>
+            </div>
+        </section>
+
+        <h2>Dịch vụ hoàn hảo</h2>
+        <section class="service">
+            <div class="service-item">
+                <i class="fa fa-headset"></i>
+                <h3>Tư vấn nhiệt tình, chu đáo</h3>
+                <p>Đội ngũ nhân viên tư vấn của G18EShop được đào tạo bài bản, am hiểu về sản phẩm, luôn sẵn sàng hỗ trợ khách hàng lựa chọn được chiếc xe phù hợp nhất với nhu cầu và sở thích. Chúng tôi cam kết mang đến cho khách hàng những trải nghiệm mua sắm tốt nhất.</p>
+            </div>
+            <div class="service-item">
+                <i class="fa fa-wrench"></i>
+                <h3>Bảo hành chính hãng, bảo dưỡng chuyên nghiệp</h3>
+                <p>G18EShop cung cấp dịch vụ bảo hành chính hãng cho tất cả các sản phẩm xe máy. Chúng tôi còn có đội ngũ kỹ thuật viên lành nghề, chuyên nghiệp, luôn sẵn sàng hỗ trợ khách hàng bảo dưỡng xe máy định kỳ.</p>
+            </div>
+            <div class="service-item">
+                <i class="fa fa-truck"></i>
+                <h3>Giao hàng tận nhà miễn phí</h3>
+                <p>G18EShop hỗ trợ giao hàng tận nhà miễn phí cho khách hàng trên toàn quốc. Chúng tôi cam kết giao hàng nhanh chóng, an toàn và đúng hẹn.</p>
+            </div>
+        </section>
     </div>
     <div id="footer">
         <div class="col">
