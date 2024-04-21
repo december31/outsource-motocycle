@@ -25,6 +25,7 @@ namespace G18EShop.Connect
 
         public SqlDataReader GetReader(String query)
         {
+            closeConnection();
             SqlCommand cmd = new SqlCommand(query);
 
             cmd.CommandType = System.Data.CommandType.Text;
@@ -37,6 +38,7 @@ namespace G18EShop.Connect
 
         public void ExecuteNonQuery(String query)
         {
+            closeConnection();
             SqlCommand cmd = new SqlCommand(query);
 
             cmd.CommandType = System.Data.CommandType.Text;

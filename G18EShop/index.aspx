@@ -249,7 +249,7 @@
     <div id="sp">
         <% foreach (var item in listProducts)
            { %>
-            <div class="boxsp">
+            <div class="boxsp" style="cursor: pointer" onclick="window.location='ProductDetail.aspx?id=<%= item.ProductId %>';">
                 <img class="img-product" src="<%= item.Img %>" width="100%"/>
                 <p class="tensp">
                     <b><%= item.Name %></b>

@@ -151,7 +151,7 @@ namespace G18EShop
                     product.Img = reader["Url"].ToString();
                 }
 
-                listProducts.Add(product);
+                listBestseller.Add(product);
             }
 
             reader.Close();

@@ -112,6 +112,7 @@
     <Content Include="index.aspx" />
     <Content Include="lienhe.aspx" />
     <Content Include="OdersManager.aspx" />
+    <Content Include="ProductDetail.aspx" />
     <Content Include="ProductManager.aspx" />
     <Content Include="sanpham.aspx" />
     <Content Include="thanhtoan.aspx" />
@@ -179,6 +180,13 @@
     </Compile>
     <Compile Include="OdersManager.aspx.designer.cs">
       <DependentUpon>OdersManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductManager.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
