@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sanpham.aspx.cs" Inherits="G18EShop.sanpham" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tintuc.aspx.cs" Inherits="G18EShop.tintuc" %>
 
 <!DOCTYPE html>
 
@@ -91,7 +91,7 @@
         </a>
 
     </div>
-    <div class="menulist">
+    <div runat="server" id="navbar" class="menulist">
         <a href="index.aspx">Trang chủ</a>
         <a href="gioithieu.aspx">Giới thiệu</a>
         <a href="sanpham.aspx">Sản phẩm</a>

@@ -154,12 +154,12 @@
     <Content Include="gioithieu.aspx" />
     <Content Include="index.aspx" />
     <Content Include="lienhe.aspx" />
-    <Content Include="OdersManager.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="ProductManager.aspx" />
     <Content Include="sanpham.aspx" />
     <Content Include="thanhtoan.aspx" />
     <Content Include="tintuc.aspx" />
+    <Content Include="UserManager.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -217,13 +217,6 @@
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="OdersManager.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>OdersManager.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OdersManager.aspx.designer.cs">
-      <DependentUpon>OdersManager.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ProductDetail.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ProductDetail.aspx</DependentUpon>
@@ -259,6 +252,13 @@
     </Compile>
     <Compile Include="tintuc.aspx.designer.cs">
       <DependentUpon>tintuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>UserManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager.aspx.designer.cs">
+      <DependentUpon>UserManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
   </ItemGroup>

@@ -22,6 +22,10 @@
             FullName = fullName;
         }
 
+        public User()
+        {
+        }
+
         public string UserPassword;
         public int UserId;
         public string UserEmail;

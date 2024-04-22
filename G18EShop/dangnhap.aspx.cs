@@ -15,6 +15,11 @@ namespace G18EShop
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] != null && Session["role"].ToString() == "admin")
+            {
+                navbar.InnerHtml += "<a href=\"Admin.aspx\">Admin</a>";
+            }
+
             if (IsPostBack)
             {
                 string email = Request.Form.Get("email");
@@ -29,6 +34,7 @@ namespace G18EShop
                         if (Encoder.Encode(password) == savedPassword)
                         {
                             Session["email"] = email;
+                            Session["role"] = reader["UserRole"];
                             Response.Redirect("index.aspx");
                         }
                         else

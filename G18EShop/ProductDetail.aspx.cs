@@ -13,6 +13,10 @@ namespace G18EShop
         {
             if (Request.QueryString["id"] != null)
             {
+                if (Session["role"] != null && Session["role"].ToString() == "admin")
+                {
+                    navbar.InnerHtml += "<a href=\"Admin.aspx\">Admin</a>";
+                }
                 string productId = Request.QueryString["id"];
                 if (Request.Form["btnAddToCard"] != null)
                 {

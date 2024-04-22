@@ -167,12 +167,12 @@
         <div class="left">
             <div class="sidebar">
                 <div class="sidebar-brand">
-                    <a href="index.aspx">EligoMebel</a>
+                    <a href="index.aspx">Trang chủ</a>
                 </div>
                 <div class="danhmuc">
                     <%-- <a href="2">Khách hàng</a> --%>
                     <a href="ProductManager.aspx">Sản phẩm</a>
-                    <a href="#">Đơn hàng</a>
+                    <a href="UserManager.aspx">Người dùng</a>
                     <%-- <a href="5">Tài khoản</a> --%>
                 </div>
             </div>

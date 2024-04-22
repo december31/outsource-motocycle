@@ -160,7 +160,7 @@
         <input type="button" value="Signup" style="background-color: #fa0000; color:white "/>
     </a>
 </div>
-<div class="menulist">
+    <div runat="server" id="navbar" class="menulist">
     <a href="index.aspx">Trang chủ</a>
     <a href="gioithieu.aspx">Giới thiệu</a>
     <a href="sanpham.aspx">Sản phẩm</a>

@@ -21,7 +21,10 @@ namespace G18EShop
             {
                 Response.Redirect("dangnhap.aspx");
             }
-
+            if (Session["role"] != null && Session["role"].ToString() == "admin")
+            {
+                navbar.InnerHtml += "<a href=\"Admin.aspx\">Admin</a>";
+            }
             Db db = new Db();
             if (Request.Form["btnDelete"] != null)
             {

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" CodeBehind="ProductManager.aspx.cs" Inherits="G18EShop.ProductManager" %>
+﻿<%@ Page Language="C#" CodeBehind="UserManager.aspx.cs" Inherits="G18EShop.UserManager" %>
 
 <!DOCTYPE html>
 
@@ -26,7 +26,7 @@
             border-radius:10px;
             padding-left:10px;
         }
-        #newProduct button{
+        #newUser button{
             width:150px;
             height:40px;
             padding:10px;
@@ -131,7 +131,7 @@
         .box-icon{
             color:#fa0000;
         }
-        #newProduct {
+        #newUser {
             margin-left: auto;
             margin-right: auto;
             max-width: fit-content;
@@ -197,6 +197,7 @@
                 </div>
                 <div class="danhmuc">
                     <a href="Admin.aspx">Dashboard</a>
+                    <a href="ProductManager.aspx">Sản phẩm</a>
                 </div>
             </div>
         </div>
@@ -213,48 +214,50 @@
                 </div>
             </div>
             <div id="chung">
-                <form id="newProduct" action="ProductManager.aspx" method="POST" enctype="multipart/form-data">
+                <form id="newUser" action="UserManager.aspx" method="POST">
                     <h3>Thêm sản phẩm</h3>
-                    <input name="Name" type="text" placeholder="Tên sản pẩm" required/></br>
-                    <input name="Description" type="text" placeholder="Description" required/></br>
-                    <input name="Price" type="number" placeholder="Price" required/></br>
-                    <input name="LastPrice" type="number" placeholder="LastPrice" required/></br>
-                    <input type="file" id="MyFileUpload" runat="server" accept="image/*" required/></br>
+                    <input name="Name" type="text" placeholder="Tên người dùng" required/></br>
+                    <input name="Email" type="email" placeholder="Email" required/></br>
+                    <input name="Password" type="number" placeholder="Mật khẩu" required/></br>
+                    <div class="col-sm-6 row">
+                        <input checked style="width: fit-content; height: fit-content" name="radioRole" type="radio" value="user" id="radioNam">User
+                        <input style="width: fit-content; height: fit-content" name="radioRole" type="radio" value="admin" id="radioNu">Admin
+                    </div>
                     <button type="submit">Thêm sản phẩm</button>
                 </form>
                 <div class="topsell">
-                    <h2 style="text-align:center;">Danh sách sản phẩm</h2>
+                    <h2 style="text-align:center;">Danh sách người dùng</h2>
                     <div class="cart">
-                        <form style="margin-left: auto; margin-right: auto; max-width: fit-content" method="post" action="ProductManager.aspx">
+                        <form style="margin-left: auto; margin-right: auto; max-width: fit-content" method="post" action="UserManager.aspx">
                             <table>
                                 <tr>
-                                    <th></th>
-                                    <th style="text-align:left;padding-left:20px;">Sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Giá cuối</th>
-                                    <th>Đã bán</th>
+                                    <th style="text-align:left;padding-left:20px;">Id</th>
+                                    <th>Tên</th>
+                                    <th>Email</th>
+                                    <th>Mật khẩu</th>
+                                    <th>Role</th>
                                     <th></th>
                                 </tr>
-                                <% foreach (var item in listProducts)
+                                <% foreach (var item in listUser)
                                    { %>
                                     <tr>
                                         <td>
-                                            <img src="<%= item.Img %>" height="70px;" style="margin-right: 30px"/>
+                                            <p><%= item.UserId %></p>
                                         </td>
                                         <td>
-                                            <p><%= item.Name %></p>
+                                            <p><%= item.UserName %></p>
                                         </td>
                                         <td>
-                                            <h5><%= item.Price %>đ</h5>
+                                            <h5><%= item.UserEmail %>đ</h5>
                                         </td>
                                         <td>
-                                            <h4><%= item.LastPrice %></h4>
+                                            <h4><%= item.UserPassword %></h4>
                                         </td>
                                         <td>
-                                            <h4><%= item.Sold %></h4>
+                                            <h4><%= item.UserRole %></h4>
                                         </td>
                                         <td style="cursor:pointer;">
-                                            <button name="btnDelete" type="submit" value="<%= item.ProductId %>">
+                                            <button name="btnDelete" type="submit" value="<%= item.UserId %>">
                                                 Xóa
                                             </button>
                                         </td>

@@ -11,7 +11,10 @@ namespace G18EShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["role"] != null && Session["role"].ToString() == "admin")
+            {
+                navbar.InnerHtml += "<a href=\"Admin.aspx\">Admin</a>";
+            }
         }
     }
 }

@@ -39,6 +39,10 @@ namespace G18EShop
             //    Response.Write("<script>alert('Data inserted successfully')</script>");
             //    connection.Close();
             //}
+            if (Session["role"] != null && Session["role"].ToString() == "admin")
+            {
+                navbar.InnerHtml += "<a href=\"Admin.aspx\">Admin</a>";
+            }
 
             if (Request.Form["btnAddToCard"] != null)
             {
