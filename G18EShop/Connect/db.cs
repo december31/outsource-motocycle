@@ -12,10 +12,10 @@ namespace G18EShop.Connect
 
         public SqlConnection GetConnection()
         {
-            string connecttionString = "Data Source=DESKTOP-RQKLK46\\SQLEXPRESS;" +
-                                       "Initial Catalog=db_ECommerceShop;" +
-                                       "User id=btlweb;" +
-                                       "Password=123;";
+            string connecttionString = "Data Source=motocycle.mssql.somee.com;" +
+                                       "Initial Catalog=motocycle;" +
+                                       "User id=harian231112_SQLLogin_1;" +
+                                       "Password=g88u7docns;";
 
             SqlConnection conn = new SqlConnection(connecttionString);
 

@@ -94,7 +94,7 @@ namespace G18EShop
 
             SqlDataReader reader =
                 dbm.GetReader(
-                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [db_ECommerceShop].[dbo].[Products] where CategoryId = 1");
+                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [Products] where CategoryId = 1");
 
             List<Product> temp = new List<Product>();
             while (reader.Read())
@@ -131,7 +131,7 @@ namespace G18EShop
 
             SqlDataReader reader =
                 dbm.GetReader(
-                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [db_ECommerceShop].[dbo].[Products] where CategoryId = 2");
+                    "SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [Products] where CategoryId = 2");
 
             List<Product> temp = new List<Product>();
             while (reader.Read())

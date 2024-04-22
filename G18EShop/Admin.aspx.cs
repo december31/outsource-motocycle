@@ -60,7 +60,7 @@ namespace G18EShop
 
             SqlDataReader reader =
                 dbm.GetReader(
-                    $"SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [db_ECommerceShop].[dbo].[Products]");
+                    $"SELECT [Products].[ProductId], [Name], [Description], [Price], [LastPrice] FROM [Products]");
 
             List<Product> temp = new List<Product>();
             while (reader.Read())
