@@ -250,7 +250,7 @@
         <% foreach (var item in listProducts)
            { %>
             <div class="boxsp" style="cursor: pointer" onclick="window.location='ProductDetail.aspx?id=<%= item.ProductId %>';">
-                <img class="img-product" src="<%= item.Img %>" width="100%"/>
+                <img class="img-product" src="<%= item.Img %>" height="230px" width="100%" style="object-fit: contain"/>
                 <p class="tensp">
                     <b><%= item.Name %></b>
                 </p>
@@ -270,7 +270,7 @@
         <% foreach (var item in listBestseller)
            { %>
             <div class="boxsp" style="cursor: pointer" onclick="window.location='ProductDetail.aspx?id=<%= item.ProductId %>';">
-                <img class="img-product" src="<%= item.Img %>" width="100%"/>
+                <img class="img-product" src="<%= item.Img %>" height="230px" width="100%" style="object-fit: contain"/>
                 <p class="tensp">
                     <b><%= item.Name %></b>
                 </p>
